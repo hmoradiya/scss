@@ -1,0 +1,191 @@
+$light_color: #ffffff;
+$dark_color: #323232;
+$blue-color: #2590d4;
+$gray-bg: #eaeaea;
+$dark-gray-bg: #333333;
+
+// reset
+
+*, *:before, *:after{
+    box-sizing: border-box;
+}
+body {
+
+}
+html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, em, img, small, strike, strong, sub, sup, tt, b, u, i, ol, ul, li, fieldset, form, label, table, caption, tbody, tfoot, thead, tr, th, td, main, canvas, embed, footer, header, nav, section, video{
+    font-family: 'Poppins', sans-serif !important;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    text-size-adjust: none;
+}
+
+footer, header, nav, section, main{
+    display: block;
+}
+
+body{
+    line-height: 1;
+}
+
+ol, ul{
+    list-style: none;
+}
+
+blockquote, q{
+    quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after{
+    content: '';
+    content: none;
+}
+
+table{
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+input{
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
+// main
+.common-title {
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+p {
+    font-size: 1rem;
+    margin: 0 !important;
+    font-weight: 500;
+}
+a {
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.banner_wrap {
+    height: 400px;
+    img.banner-img {
+        object-fit: cover;
+        z-index: 0;
+        filter: blur(1px) brightness(0.5);
+    }
+    div {
+        z-index: 1;
+        color: $light_color;
+        h1,p {
+            margin-bottom: 1.5rem !important;
+        }
+        button {
+            background-color: #333333;
+            color: $light_color;
+            border: 1px solid #4e4e4d;
+            box-shadow: none;
+            position: relative;
+            overflow: hidden;
+            z-index: 0;
+            &::after {
+                content: '';
+                height: 90px;
+                width: 10px;
+                left: -60px;
+                background: $light_color;
+                opacity: 0.2;
+                z-index: 1;
+                position: absolute;
+                top: -16px;
+                transform: rotate(33deg);
+                transition-duration: 0.5s;
+            }
+            &:hover {
+                background-color: #242424;
+            }
+            &:hover::after {
+                left: 200px;
+            }
+        }
+    }
+}
+
+.devlopment_detail_wrap {
+    background-color: $gray-bg;
+    color: $dark_color;
+}
+
+.devlopment_type_wrap {
+    background-color: $dark-gray-bg;
+    color: $dark_color;
+    div{
+        .dev_type_card {
+            background-color: $light_color;
+            .dev_img_wrap {
+                width: 100%;
+                height: 180px;
+                overflow: hidden;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    transition: 1s;
+                }
+            }
+            &:hover {
+                cursor: pointer;
+                box-shadow: 0px 0px 20px #000000;
+                img {
+                    transform: scale(1.2);
+                }
+            }
+        }
+    }
+}
+.degital_detail_wrap {
+    background-color: $light_color;
+    color: $dark_color;
+}
+.compny_detail_wrap {
+    color: $light_color;
+    .contact_detail {
+        background-color: $blue-color;
+        a {
+            color: $light_color;
+            text-decoration: none;
+        }
+    }
+    .compny_detail {
+        background-color: $dark-gray-bg;
+    }
+}
+.footer_detail_wrap {
+    background-color: #000;
+    color: $light_color;
+    a {
+        color: $blue-color !important;
+    }
+}
+
+// media query
+
+
+@media (min-width: 992px) and (min-width: 1200px) {
+    .container {
+        max-width: 900px !important;
+    }
+}
+@media (max-width: 992px) {
+    .devlopment_type_wrap {
+        div{
+            .dev_type_card {
+                margin-bottom: 1.5rem;
+            }
+        }
+    }
+}
